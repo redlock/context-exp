@@ -50,10 +50,6 @@ function Example(props) {
 	// Declare a new state variable, which we'll call "count"
 	const [count, setCount] = useState(0)
 
-	const onClick = () => {
-		setCount(count + 1)
-	}
-
 	return (
 		<ThemeContext.Consumer>
 			{({ theme, toggleTheme }) => {
@@ -62,8 +58,10 @@ function Example(props) {
 					<div>
 						<p>You clicked {count} times</p>
 						<button
-							onClick={toggleTheme}
-							style={{ backgroundColor: theme.background }}
+							onClick={() => {
+								toggleTheme();
+								setCount(count + 1)
+							}}
 						>
 							Toggle Theme
 						</button>
