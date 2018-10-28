@@ -2,7 +2,7 @@ const path = require("path")
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-	entry: "./src/index.mobx.tsx",
+	entry: "./src/index.redux.tsx",
 	module: {
 		rules: [
 			{
